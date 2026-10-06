@@ -1,0 +1,43 @@
+:root{--ink:#0E1330;--brand:#6D5BFF;--brand2:#14C8B0;--muted:#6B7194;--bg:#F6F7FC;--line:#E6E8F5}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg)}
+.btn{border-radius:10px;font-weight:600}
+.btn-primary{--bs-btn-bg:var(--brand);--bs-btn-border-color:var(--brand);--bs-btn-hover-bg:#5846e6;--bs-btn-hover-border-color:#5846e6;--bs-btn-active-bg:#4c3bd6;--bs-btn-active-border-color:#4c3bd6;--bs-btn-disabled-bg:var(--brand);--bs-btn-disabled-border-color:var(--brand)}
+.form-control,.form-select{border-radius:10px;padding:.62rem .85rem;border-color:#DADDF0}
+.form-control:focus,.form-select:focus{border-color:var(--brand);box-shadow:0 0 0 .2rem rgba(109,91,255,.15)}
+.card{border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 24px rgba(30,30,90,.05)}
+.card h2{font-weight:800;color:var(--brand)}
+.table{border-collapse:separate;border-spacing:0;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(30,30,90,.05)}
+.table th{background:#EEF0FB;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+a{color:var(--brand)}
+.sk-nav{background:#fff;border-bottom:1px solid var(--line);padding:.7rem 1.25rem;display:flex;align-items:center;gap:.25rem;position:sticky;top:0;z-index:10;flex-wrap:wrap}
+.sk-brand{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;margin-right:1rem}
+.sk-brand img{width:36px;height:36px}
+.sk-nav .nav-link{color:var(--muted);font-weight:600;border-radius:8px;padding:.45rem .8rem}
+.sk-nav .nav-link:hover{background:#EEF0FB;color:var(--ink)}
+.grad{background:linear-gradient(120deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* auth */
+.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+.auth-side{background:radial-gradient(circle at 20% 10%,#7f6bff,transparent 55%),linear-gradient(160deg,#141a4a,#0E1330);color:#fff;padding:3rem;display:flex;flex-direction:column;justify-content:space-between}
+.auth-side .sk-brand{color:#fff}
+.auth-main{display:flex;align-items:center;justify-content:center;padding:2rem}
+.auth-card{width:100%;max-width:420px}
+@media(max-width:800px){.auth{grid-template-columns:1fr}.auth-side{display:none}}
+/* landing */
+.hero{background:radial-gradient(55% 60% at 85% 0%,rgba(109,91,255,.22),transparent),radial-gradient(45% 50% at 0% 35%,rgba(20,200,176,.18),transparent);padding:5.5rem 0 4rem}
+.hero h1{font-weight:800;font-size:clamp(2.3rem,5.2vw,3.9rem);line-height:1.07;letter-spacing:-.025em}
+.pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:99px;padding:.35rem .9rem;font-size:.85rem;font-weight:600;color:var(--muted)}
+.stat b{display:block;font-size:2.2rem;font-weight:800}
+.feat{padding:1.6rem;height:100%}
+.ico{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:#EEEBFF;font-size:1.4rem;margin-bottom:.9rem}
+.step{counter-increment:s}.step:before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;margin-bottom:.8rem}
+.cta{background:linear-gradient(135deg,#141a4a,#0E1330);color:#fff;border-radius:24px;padding:3rem 2rem}
+.sk-foot{background:var(--ink);color:#9aa0c4;padding:2rem 0;margin-top:4rem}
+/* welcome splash */
+#splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;text-align:center;color:#fff;background:radial-gradient(circle at 30% 20%,#6D5BFF,transparent 55%),radial-gradient(circle at 80% 90%,#14C8B0,transparent 45%),#0E1330;transition:opacity .6s,visibility .6s;cursor:pointer}
+#splash.hide{opacity:0;visibility:hidden}
+#splash img{width:104px;animation:pop .9s cubic-bezier(.2,1.4,.4,1) both}
+#splash small{display:block;opacity:.7;letter-spacing:.25em;text-transform:uppercase;margin:1.4rem 0 .3rem;animation:rise .7s .3s both}
+#splash h1{font-weight:800;font-size:clamp(2.2rem,7vw,3.6rem);letter-spacing:-.02em;margin:0;animation:rise .8s .45s both}
+@keyframes pop{from{transform:scale(.3) rotate(-25deg);opacity:0}}
+@keyframes rise{from{transform:translateY(16px);opacity:0}}
+@media(prefers-reduced-motion:reduce){#splash *{animation:none!important}}
